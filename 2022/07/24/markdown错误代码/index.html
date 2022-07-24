@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"lzhdy.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="markdown错误代码">
+<meta property="og:url" content="http://lzhdy.com/2022/07/24/markdown%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81/index.html">
+<meta property="og:site_name" content="次元空间">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-24T13:59:16.000Z">
+<meta property="article:modified_time" content="2022-07-24T14:23:13.499Z">
+<meta property="article:author" content="李振辉">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://lzhdy.com/2022/07/24/markdown%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>markdown错误代码 | 次元空间</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">次元空间</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">lizhenhui</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lzhdy.com/2022/07/24/markdown%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="李振辉">
+      <meta itemprop="description" content="牛羊成群，唯猛虎独行！！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="次元空间">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          markdown错误代码
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-07-24 21:59:16 / 修改时间：22:23:13" itemprop="dateCreated datePublished" datetime="2022-07-24T21:59:16+08:00">2022-07-24</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><escape><span id="more"></span></escape></p>
+<h2 id="markdown规则详细介绍及自定义参数设置"><a href="#markdown规则详细介绍及自定义参数设置" class="headerlink" title="markdown规则详细介绍及自定义参数设置"></a>markdown规则详细介绍及自定义参数设置</h2><h3 id="MD001-Heading-levels-should-only-increment-by-one-level-at-a-time"><a href="#MD001-Heading-levels-should-only-increment-by-one-level-at-a-time" class="headerlink" title="MD001 - Heading levels should only increment by one level at a time"></a>MD001 - Heading levels should only increment by one level at a time</h3><ul>
+<li><strong>标题级数每次只能扩大1, 也就是不能隔级创建标题（从1级到6级的顺序）</strong></li>
+</ul>
+<h3 id="MD002-First-heading-should-be-a-top-level-heading"><a href="#MD002-First-heading-should-be-a-top-level-heading" class="headerlink" title="MD002 - First heading should be a top level heading"></a>MD002 - First heading should be a top level heading</h3><ul>
+<li><strong>文档的第一个标题必须是最高级的标题（标题等级1级到6级逐渐降低）</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“level”：指定最高级标题的级数，默认是1</p>
+</blockquote>
+<h3 id="MD003-Heading-style"><a href="#MD003-Heading-style" class="headerlink" title="MD003 - Heading style"></a>MD003 - Heading style</h3><ul>
+<li><strong>整篇文档要采用一致的标题格式</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“style”：字符串，指定文档标题的格式，有(“consistent”, “atx”, “atx_closed”, “setext”, “setext_with_atx”, “setext_with_atx_closed”)五种，默认是”consistent”，也就是整篇文档一致<br>标题格式必须统一，一般不能混用，但”setext_with_atx”, “setext_with_atx_closed”格式可以在”setext”格式二级标题后接着使用”atx”或”atx_closed”格式的标题</p>
+</blockquote>
+<h3 id="MD004-Unordered-list-style"><a href="#MD004-Unordered-list-style" class="headerlink" title="MD004 - Unordered list style"></a>MD004 - Unordered list style</h3><ul>
+<li><strong>整篇文档定义无序列表的格式要一致</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“style”：字符串，指定无序列表的定义格式，有(“consistent”, “asterisk”, “plus”, “dash”, “sublist”)五种，分别表示“定义时符号前后一致”，“用星号定义”，“用加号定义”，“用减号定义”，“定义多重列表时用不同的符号定义”，默认是”consistent”</p>
+</blockquote>
+<h3 id="MD005-Inconsistent-indentation-for-list-items-at-the-same-level"><a href="#MD005-Inconsistent-indentation-for-list-items-at-the-same-level" class="headerlink" title="MD005 - Inconsistent indentation for list items at the same level"></a>MD005 - Inconsistent indentation for list items at the same level</h3><ul>
+<li><strong>同一级的列表缩进必须一致</strong></li>
+<li><strong>在有序列表中，前面的数字序号可以左对齐，也可以右对齐</strong></li>
+</ul>
+<h3 id="MD006-Consider-starting-bulleted-lists-at-the-beginning-of-the-line"><a href="#MD006-Consider-starting-bulleted-lists-at-the-beginning-of-the-line" class="headerlink" title="MD006 - Consider starting bulleted lists at the beginning of the line"></a>MD006 - Consider starting bulleted lists at the beginning of the line</h3><ul>
+<li><strong>1级列表不能缩进</strong></li>
+</ul>
+<h3 id="MD007-Unordered-list-indentation"><a href="#MD007-Unordered-list-indentation" class="headerlink" title="MD007 - Unordered list indentation"></a>MD007 - Unordered list indentation</h3><ul>
+<li><strong>无序列表嵌套缩进时默认采用两个空格</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“ident”：指定无序列表嵌套时缩进的空格数，默认是2</p>
+</blockquote>
+<h3 id="MD009-Trailing-spaces"><a href="#MD009-Trailing-spaces" class="headerlink" title="MD009 - Trailing spaces"></a>MD009 - Trailing spaces</h3><ul>
+<li><strong>行尾最多可以添加两个空格，超过会给出警告，两个空格正好可以用于换行</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“br_spaces”：指定在行尾可以添加的空格数目，空格数目建议大于等于2，如果小于2，会默认为0，也就是不允许任何行尾的空格<br>“list_item_empty_lines”：字符串，指定在列表中是否(true or false)用默认的空格数缩进空行，有的解释器会要求列表中的空行要缩进</p>
+</blockquote>
+<h3 id="MD010-Hard-tabs"><a href="#MD010-Hard-tabs" class="headerlink" title="MD010 - Hard tabs"></a>MD010 - Hard tabs</h3><ul>
+<li><strong>不能使用tab键缩进，要使用空格</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“code_blocks”：指定本条规则在代码块里是否(true or false)生效</p>
+</blockquote>
+<h3 id="MD011-Reversed-link-syntax"><a href="#MD011-Reversed-link-syntax" class="headerlink" title="MD011 - Reversed link syntax"></a>MD011 - Reversed link syntax</h3><ul>
+<li><strong>检查内联形式的链接的创建方式是否错误，中括号和圆括号是否用对</strong></li>
+</ul>
+<h3 id="MD012-Multiple-consecutive-blank-lines"><a href="#MD012-Multiple-consecutive-blank-lines" class="headerlink" title="MD012 - Multiple consecutive blank lines"></a>MD012 - Multiple consecutive blank lines</h3><ul>
+<li><strong>文档中不能有连续的空行，在代码块中此规则不会生效</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“maximum”：指定文档中可以连续的最多空行数，默认值是1</p>
+</blockquote>
+<h3 id="MD013-Line-length"><a href="#MD013-Line-length" class="headerlink" title="MD013 - Line length"></a>MD013 - Line length</h3><ul>
+<li><strong>默认行的最大长度是80，此规则对代码块、表格、标题也生效</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“line_length”：指定行的最大长度，默认是80<br>“heading_line_length”：指定标题行的最大长度，默认是80<br>“code_blocks”：指定规则是否(true or false)对代码块生效，默认true<br>“tables”：指定规则是否(true or false)对表格生效，默认true<br>“hesdings”：指定规则是否(true or false)对标题生效，默认true</p>
+</blockquote>
+<h3 id="MD014-Dollar-signs-used-before-commands-without-showing-output"><a href="#MD014-Dollar-signs-used-before-commands-without-showing-output" class="headerlink" title="MD014 - Dollar signs used before commands without showing output"></a>MD014 - Dollar signs used before commands without showing output</h3><ul>
+<li><strong>在代码块中，终端命令前不需要有美元符号 $</strong></li>
+<li><strong>如果代码块中既有终端命令，也有命令的输出，则终端命令前可以有美元符号，如:</strong></li>
+</ul>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">foo bar</span><br><span class="line">$ cat foo</span><br><span class="line">hello world</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="MD019-Multiple-spaces-after-hash-on-atx-style-heading"><a href="#MD019-Multiple-spaces-after-hash-on-atx-style-heading" class="headerlink" title="MD019 - Multiple spaces after hash on atx style heading"></a>MD019 - Multiple spaces after hash on atx style heading</h3><ul>
+<li><strong>在”atx”格式的标题中，#号和文字间只能用一个空格隔开，不能有多余的空格</strong></li>
+</ul>
+<h3 id="MD020-No-space-inside-hashes-on-closed-atx-style-heading"><a href="#MD020-No-space-inside-hashes-on-closed-atx-style-heading" class="headerlink" title="MD020 - No space inside hashes on closed atx style heading"></a>MD020 - No space inside hashes on closed atx style heading</h3><ul>
+<li><strong>在”closed_atx”格式的标题中，文字和前后的#号之间需用一个空格隔开</strong></li>
+</ul>
+<h3 id="MD021-Multiple-spaces-inside-hashes-on-closed-atx-style-heading"><a href="#MD021-Multiple-spaces-inside-hashes-on-closed-atx-style-heading" class="headerlink" title="MD021 - Multiple spaces inside hashes on closed atx style heading"></a>MD021 - Multiple spaces inside hashes on closed atx style heading</h3><ul>
+<li><strong>在”closed_atx”格式的标题中，文字和前后的#号之间只能用一个空格隔开，不能有多余的空格</strong></li>
+</ul>
+<h3 id="MD022-Headings-should-be-surrounded-by-blank-lines"><a href="#MD022-Headings-should-be-surrounded-by-blank-lines" class="headerlink" title="MD022 - Headings should be surrounded by blank lines"></a>MD022 - Headings should be surrounded by blank lines</h3><ul>
+<li><strong>标题行的上下行必须都是空行</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“lines_above”：指定标题行上方的空行数，默认为1，可以设为更大或0<br>“lines_below”：指定标题行下方的空行数，默认为1，可以设为更大或0</p>
+</blockquote>
+<ul>
+<li><strong>注意当此处的空行设为比1大的数时，规则MD012的设置也要改</strong></li>
+</ul>
+<h3 id="MD023-Headings-must-start-at-the-beginning-of-the-line"><a href="#MD023-Headings-must-start-at-the-beginning-of-the-line" class="headerlink" title="MD023 - Headings must start at the beginning of the line"></a>MD023 - Headings must start at the beginning of the line</h3><ul>
+<li><strong>标题行不能缩进</strong></li>
+</ul>
+<h3 id="MD024-Multiple-headings-with-the-same-content"><a href="#MD024-Multiple-headings-with-the-same-content" class="headerlink" title="MD024 - Multiple headings with the same content"></a>MD024 - Multiple headings with the same content</h3><ul>
+<li><strong>文档不能有内容重复的标题</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“siblings_only”：默认为false，设为true时，不同标题下的子标题内容可以重复</p>
+</blockquote>
+<h3 id="MD025-Multiple-top-level-headings-in-the-same-document"><a href="#MD025-Multiple-top-level-headings-in-the-same-document" class="headerlink" title="MD025 - Multiple top level headings in the same document"></a>MD025 - Multiple top level headings in the same document</h3><ul>
+<li><strong>同一文档只能有一个最高级的标题，默认是只能有一个1级标题</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“level”：指定文档最高级的标题，默认是1<br>“front_matter_title”：字符串，指定在文档开头处的front matter中的标题，这个标题将作为整篇文档的最高级标题，如果文档中再次出现最高级标题，将会给出警告，另外，如果不想在front matter中指定标题，就把本参数的值设置为””</p>
+</blockquote>
+<h3 id="MD026-Trailing-punctuation-in-heading"><a href="#MD026-Trailing-punctuation-in-heading" class="headerlink" title="MD026 - Trailing punctuation in heading"></a>MD026 - Trailing punctuation in heading</h3><p>-<strong>标题行末尾不能有以下标点符号：”.,;:!?”</strong></p>
+<blockquote>
+<p>参数：<br>“punctuation”：字符串，指定标题行尾不能有的标点符号，默认是”.,;:!?”</p>
+</blockquote>
+<ul>
+<li><strong>此规则默认的是英文的标点符号，中文标点符号不在规则之内</strong></li>
+</ul>
+<h3 id="MD027-Multiple-spaces-after-blockquote-symbol"><a href="#MD027-Multiple-spaces-after-blockquote-symbol" class="headerlink" title="MD027 - Multiple spaces after blockquote symbol"></a>MD027 - Multiple spaces after blockquote symbol</h3><ul>
+<li><strong>创建引用区块时，右尖括号 ( &gt; ) 和文字之间有且只能有一个空格</strong></li>
+</ul>
+<h3 id="MD028-Blank-line-inside-blockquote"><a href="#MD028-Blank-line-inside-blockquote" class="headerlink" title="MD028 - Blank line inside blockquote"></a>MD028 - Blank line inside blockquote</h3><ul>
+<li><strong>两个引用区块间不能仅用一个空行隔开或者同一引用区块中不能有空行，如果一行中没有内容，则这一行要用&gt;开头</strong></li>
+</ul>
+<h3 id="MD029-Ordered-list-item-prefix"><a href="#MD029-Ordered-list-item-prefix" class="headerlink" title="MD029 - Ordered list item prefix"></a>MD029 - Ordered list item prefix</h3><ul>
+<li><strong>有序列表的前缀序号格式必须只用1或者从1开始的加1递增数字(“one_or_ordered”)</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“style”：字符串，指定前缀序号的格式，(“one”,“ordered”,“one_or_ordered”,“zero”)，分别表示只用1做前缀，用从1开始的加1递增数字做前缀，只用1或者从1开始的加1递增数字做前缀，只用0做前缀，默认值是”one_or_ordered”</p>
+</blockquote>
+<ul>
+<li><strong>本条规则支持在前缀序号中补0，以实现对齐</strong></li>
+</ul>
+<h3 id="MD030-Spaces-after-list-markers"><a href="#MD030-Spaces-after-list-markers" class="headerlink" title="MD030 - Spaces after list markers"></a>MD030 - Spaces after list markers</h3><ul>
+<li><strong>列表（有序、无序）的前缀符号和文字之间用1个空格隔开</strong></li>
+<li><strong>在列表嵌套或者同一列表项中有多个段落时，无序列表缩进两个空格，有序列表缩进3个空格</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“ul_single”,“ol_single”,“ul_multi”,“ol_multi”：分别规定无序列表单个段落，有序列表单个段落，无序列表多个段落，有序列表多个段落的前缀符号和文字之间的空格数，默认是1</p>
+</blockquote>
+<h3 id="MD031-Fenced-code-blocks-should-be-surrounded-by-blank-lines"><a href="#MD031-Fenced-code-blocks-should-be-surrounded-by-blank-lines" class="headerlink" title="MD031 - Fenced code blocks should be surrounded by blank lines"></a>MD031 - Fenced code blocks should be surrounded by blank lines</h3><ul>
+<li><strong>单独的代码块前后需要用空行隔开（除非是在文档开头或末尾），否则有些解释器不会解释为代码块</strong></li>
+</ul>
+<h3 id="MD032-Lists-should-be-surrounded-by-blank-lines"><a href="#MD032-Lists-should-be-surrounded-by-blank-lines" class="headerlink" title="MD032 - Lists should be surrounded by blank lines"></a>MD032 - Lists should be surrounded by blank lines</h3><ul>
+<li><strong>列表（有序、无序）前后需要用空行隔开，否则有些解释器不会解释为列表<br>列表的缩进必须一致，否则会警告</strong></li>
+</ul>
+<h3 id="MD033-Inline-HTML"><a href="#MD033-Inline-HTML" class="headerlink" title="MD033 - Inline HTML"></a>MD033 - Inline HTML</h3><ul>
+<li><strong>文档中不允许使用HTML语句</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“allowed_elements”：自定义允许的元素，是一个字符串数组，默认是空(empty)</p>
+</blockquote>
+<h3 id="MD034-Bare-URL-used"><a href="#MD034-Bare-URL-used" class="headerlink" title="MD034 - Bare URL used"></a>MD034 - Bare URL used</h3><ul>
+<li><strong>单纯的链接地址需要用尖括号 (&lt;&gt;) 包裹，否则有些解释器不会解释为链接</strong></li>
+</ul>
+<h3 id="MD035-Horizontal-rule-style"><a href="#MD035-Horizontal-rule-style" class="headerlink" title="MD035 - Horizontal rule style"></a>MD035 - Horizontal rule style</h3><ul>
+<li><strong>创建水平线时整篇文档要统一(consistent)，要和文档中第一次创建水平线使用的符号一致</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“style”：字符串，指定创建水平线的方式，值有：(“consistent”,”***”,”—“,”___”)，默认是”consistent”</p>
+</blockquote>
+<h3 id="MD036-Emphasis-used-instead-of-a-heading"><a href="#MD036-Emphasis-used-instead-of-a-heading" class="headerlink" title="MD036 - Emphasis used instead of a heading"></a>MD036 - Emphasis used instead of a heading</h3><ul>
+<li><strong>不能用强调代替标题</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“punctuation”：字符串，指定用于结尾的标点符号，以此符号结尾的强调不会被视为以强调代替标题，默认值是”.,;:!?”</p>
+</blockquote>
+<ul>
+<li><strong>此规则会检查只包含强调的单行段落，如果这种段落不是以指定的标点符号结尾，则会被视为以强调代替标题，会给出警告</strong></li>
+</ul>
+<h3 id="MD037-Spaces-inside-emphasis-markers"><a href="#MD037-Spaces-inside-emphasis-markers" class="headerlink" title="MD037 - Spaces inside emphasis markers"></a>MD037 - Spaces inside emphasis markers</h3><ul>
+<li><strong>用于创建强调的符号和强调的的文字之间不能有空格</strong></li>
+</ul>
+<h3 id="MD038-Spaces-inside-code-span-elements"><a href="#MD038-Spaces-inside-code-span-elements" class="headerlink" title="MD038 - Spaces inside code span elements"></a>MD038 - Spaces inside code span elements</h3><ul>
+<li><strong>当用单反引号创建代码段的时候，单反引号和它们之间的代码不能有空格如果要把单反引号嵌入到代码段的首尾，创建代码段的单反引号和嵌入的单反引号间要有一个空格隔开</strong></li>
+</ul>
+<h3 id="MD039-Spaces-inside-link-text"><a href="#MD039-Spaces-inside-link-text" class="headerlink" title="MD039 - Spaces inside link text"></a>MD039 - Spaces inside link text</h3><ul>
+<li><strong>链接名和包围它的中括号之间不能有空格，但链接名中间可以有空格，如：</strong></li>
+</ul>
+<blockquote>
+<p>![百 度]<a target="_blank" rel="noopener" href="http://www.baidu.com/">http://www.baidu.com</a></p>
+</blockquote>
+<h3 id="MD040-Fenced-code-blocks-should-have-a-language-specified"><a href="#MD040-Fenced-code-blocks-should-have-a-language-specified" class="headerlink" title="MD040 - Fenced code blocks should have a language specified"></a>MD040 - Fenced code blocks should have a language specified</h3><ul>
+<li><strong>单独的代码块（此处是指上下用三个反引号包围的代码块）应该指定代码块的编程语言，这一点有助于解释器对代码进行代码高亮</strong></li>
+</ul>
+<h3 id="MD041-First-line-in-file-should-be-a-top-level-heading"><a href="#MD041-First-line-in-file-should-be-a-top-level-heading" class="headerlink" title="MD041 - First line in file should be a top level heading"></a>MD041 - First line in file should be a top level heading</h3><ul>
+<li><strong>文档的第一个非空行应该是文档最高级的标题，默认是1级标题</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“level”：指定文档最高级的标题，默认是1<br>“front_matter_title”：字符串，指定在文档开头处的front matter中的标题，这个标题将作为整篇文档的最高级标题，另外，如果不想在front matter中指定标题，就把本参数的值设置为””</p>
+</blockquote>
+<h3 id="MD042-No-empty-links"><a href="#MD042-No-empty-links" class="headerlink" title="MD042 - No empty links"></a>MD042 - No empty links</h3><ul>
+<li><strong>链接的地址不能为空</strong></li>
+</ul>
+<h3 id="MD043-Required-heading-structure"><a href="#MD043-Required-heading-structure" class="headerlink" title="MD043 - Required heading structure"></a>MD043 - Required heading structure</h3><ul>
+<li><strong>要求标题遵循一定的结构，默认是没有规定的结构(“null”)</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“headings”：字符串数组，指定标题需要遵循的结构，默认是”null”，可以自行指定结构，如；</p>
+</blockquote>
+<ul>
+<li><strong>星号(*)表示对应的标题是可选的，没有强制要求，本条具体可以参照MD043</strong></li>
+</ul>
+<h3 id="MD044-Proper-names-should-have-the-correct-capitalization"><a href="#MD044-Proper-names-should-have-the-correct-capitalization" class="headerlink" title="MD044 - Proper names should have the correct capitalization"></a>MD044 - Proper names should have the correct capitalization</h3><ul>
+<li><strong>指定一些名称，会检查它是否有正确的大写</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“names”：字符串数组，指定要检查需要大写的名称，默认是空(“null”)<br>“code_blocks”：指定本规则是否(true or false)对代码块生效，默认是true<br>一些经常使用的名称可以使用本规则防止其拼写错误，比如JavaScript中字母J和S需要大写，就可以写到参数”names”中，防止写错</p>
+</blockquote>
+<h3 id="MD045-Images-should-have-alternate-text-alt-text"><a href="#MD045-Images-should-have-alternate-text-alt-text" class="headerlink" title="MD045 - Images should have alternate text (alt text)"></a>MD045 - Images should have alternate text (alt text)</h3><ul>
+<li><strong>图片链接必须包含描述文本（alt text）</strong></li>
+</ul>
+<h3 id="MD046-Code-block-style"><a href="#MD046-Code-block-style" class="headerlink" title="MD046 - Code block style"></a>MD046 - Code block style</h3><ul>
+<li><strong>整篇文档采用一致的代码格式</strong></li>
+</ul>
+<blockquote>
+<p>参数：<br>“style”: 字符串，指定代码块定义格式，有（“consistent”,“fenced”,“indented”）三种，分别代表：文档上下文一致，使用三个反引号隔开，使用缩进，默认是上下文一致</p>
+</blockquote>
+<h3 id="MD047-Files-should-end-with-a-single-newline-character"><a href="#MD047-Files-should-end-with-a-single-newline-character" class="headerlink" title="MD047 - Files should end with a single newline character"></a>MD047 - Files should end with a single newline character</h3><ul>
+<li><strong>文档需用一个空行结尾</strong></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    
+          <div>
+              <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+          </div>
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>李振辉
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://lzhdy.com/2022/07/24/markdown%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81/" title="markdown错误代码">http://lzhdy.com/2022/07/24/markdown错误代码/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/07/23/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/07/24/test/" rel="next" title="test">
+      test <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown%E8%A7%84%E5%88%99%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">markdown规则详细介绍及自定义参数设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MD001-Heading-levels-should-only-increment-by-one-level-at-a-time"><span class="nav-number">1.1.</span> <span class="nav-text">MD001 - Heading levels should only increment by one level at a time</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD002-First-heading-should-be-a-top-level-heading"><span class="nav-number">1.2.</span> <span class="nav-text">MD002 - First heading should be a top level heading</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD003-Heading-style"><span class="nav-number">1.3.</span> <span class="nav-text">MD003 - Heading style</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD004-Unordered-list-style"><span class="nav-number">1.4.</span> <span class="nav-text">MD004 - Unordered list style</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD005-Inconsistent-indentation-for-list-items-at-the-same-level"><span class="nav-number">1.5.</span> <span class="nav-text">MD005 - Inconsistent indentation for list items at the same level</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD006-Consider-starting-bulleted-lists-at-the-beginning-of-the-line"><span class="nav-number">1.6.</span> <span class="nav-text">MD006 - Consider starting bulleted lists at the beginning of the line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD007-Unordered-list-indentation"><span class="nav-number">1.7.</span> <span class="nav-text">MD007 - Unordered list indentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD009-Trailing-spaces"><span class="nav-number">1.8.</span> <span class="nav-text">MD009 - Trailing spaces</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD010-Hard-tabs"><span class="nav-number">1.9.</span> <span class="nav-text">MD010 - Hard tabs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD011-Reversed-link-syntax"><span class="nav-number">1.10.</span> <span class="nav-text">MD011 - Reversed link syntax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD012-Multiple-consecutive-blank-lines"><span class="nav-number">1.11.</span> <span class="nav-text">MD012 - Multiple consecutive blank lines</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD013-Line-length"><span class="nav-number">1.12.</span> <span class="nav-text">MD013 - Line length</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD014-Dollar-signs-used-before-commands-without-showing-output"><span class="nav-number">1.13.</span> <span class="nav-text">MD014 - Dollar signs used before commands without showing output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD019-Multiple-spaces-after-hash-on-atx-style-heading"><span class="nav-number">1.14.</span> <span class="nav-text">MD019 - Multiple spaces after hash on atx style heading</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD020-No-space-inside-hashes-on-closed-atx-style-heading"><span class="nav-number">1.15.</span> <span class="nav-text">MD020 - No space inside hashes on closed atx style heading</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD021-Multiple-spaces-inside-hashes-on-closed-atx-style-heading"><span class="nav-number">1.16.</span> <span class="nav-text">MD021 - Multiple spaces inside hashes on closed atx style heading</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD022-Headings-should-be-surrounded-by-blank-lines"><span class="nav-number">1.17.</span> <span class="nav-text">MD022 - Headings should be surrounded by blank lines</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD023-Headings-must-start-at-the-beginning-of-the-line"><span class="nav-number">1.18.</span> <span class="nav-text">MD023 - Headings must start at the beginning of the line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD024-Multiple-headings-with-the-same-content"><span class="nav-number">1.19.</span> <span class="nav-text">MD024 - Multiple headings with the same content</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD025-Multiple-top-level-headings-in-the-same-document"><span class="nav-number">1.20.</span> <span class="nav-text">MD025 - Multiple top level headings in the same document</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD026-Trailing-punctuation-in-heading"><span class="nav-number">1.21.</span> <span class="nav-text">MD026 - Trailing punctuation in heading</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD027-Multiple-spaces-after-blockquote-symbol"><span class="nav-number">1.22.</span> <span class="nav-text">MD027 - Multiple spaces after blockquote symbol</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD028-Blank-line-inside-blockquote"><span class="nav-number">1.23.</span> <span class="nav-text">MD028 - Blank line inside blockquote</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD029-Ordered-list-item-prefix"><span class="nav-number">1.24.</span> <span class="nav-text">MD029 - Ordered list item prefix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD030-Spaces-after-list-markers"><span class="nav-number">1.25.</span> <span class="nav-text">MD030 - Spaces after list markers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD031-Fenced-code-blocks-should-be-surrounded-by-blank-lines"><span class="nav-number">1.26.</span> <span class="nav-text">MD031 - Fenced code blocks should be surrounded by blank lines</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD032-Lists-should-be-surrounded-by-blank-lines"><span class="nav-number">1.27.</span> <span class="nav-text">MD032 - Lists should be surrounded by blank lines</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD033-Inline-HTML"><span class="nav-number">1.28.</span> <span class="nav-text">MD033 - Inline HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD034-Bare-URL-used"><span class="nav-number">1.29.</span> <span class="nav-text">MD034 - Bare URL used</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD035-Horizontal-rule-style"><span class="nav-number">1.30.</span> <span class="nav-text">MD035 - Horizontal rule style</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD036-Emphasis-used-instead-of-a-heading"><span class="nav-number">1.31.</span> <span class="nav-text">MD036 - Emphasis used instead of a heading</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD037-Spaces-inside-emphasis-markers"><span class="nav-number">1.32.</span> <span class="nav-text">MD037 - Spaces inside emphasis markers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD038-Spaces-inside-code-span-elements"><span class="nav-number">1.33.</span> <span class="nav-text">MD038 - Spaces inside code span elements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD039-Spaces-inside-link-text"><span class="nav-number">1.34.</span> <span class="nav-text">MD039 - Spaces inside link text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD040-Fenced-code-blocks-should-have-a-language-specified"><span class="nav-number">1.35.</span> <span class="nav-text">MD040 - Fenced code blocks should have a language specified</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD041-First-line-in-file-should-be-a-top-level-heading"><span class="nav-number">1.36.</span> <span class="nav-text">MD041 - First line in file should be a top level heading</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD042-No-empty-links"><span class="nav-number">1.37.</span> <span class="nav-text">MD042 - No empty links</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD043-Required-heading-structure"><span class="nav-number">1.38.</span> <span class="nav-text">MD043 - Required heading structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD044-Proper-names-should-have-the-correct-capitalization"><span class="nav-number">1.39.</span> <span class="nav-text">MD044 - Proper names should have the correct capitalization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD045-Images-should-have-alternate-text-alt-text"><span class="nav-number">1.40.</span> <span class="nav-text">MD045 - Images should have alternate text (alt text)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD046-Code-block-style"><span class="nav-number">1.41.</span> <span class="nav-text">MD046 - Code block style</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD047-Files-should-end-with-a-single-newline-character"><span class="nav-number">1.42.</span> <span class="nav-text">MD047 - Files should end with a single newline character</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="李振辉"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">李振辉</p>
+  <div class="site-description" itemprop="description">牛羊成群，唯猛虎独行！！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lzhdy" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lzhdy" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1669038249@qq.com" title="E-Mail → mailto:1669038249@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2022-07 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">李振辉</span>
+</div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-meta-divider">|</span>
+  <span class="post-count">博客全站共2.8k字</span>
+</div>
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客数<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+$(document).ready(function() {
+
+    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+    var countOffset = 20000;  // 初始化首次数据
+    function fixCount() {            
+       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
+        {
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); 
+            clearInterval(int);
+        }                  
+        if ($("#busuanzi_container_site_pv").css("display") != "none")
+        {
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据 
+            clearInterval(int); // 停止检测
+        }  
+    }
+       	
+});
+</script> 
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='80,255,80' opacity='1' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
